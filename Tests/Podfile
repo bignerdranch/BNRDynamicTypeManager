@@ -1,0 +1,7 @@
+xcodeproj 'BNRDynamicTypeManager Tests'
+workspace '../BNRDynamicTypeManager'
+
+platform :ios, '7.0'
+
+pod 'Expecta', '~> 0.2.3'
+pod 'BNRDynamicTypeManager', :path => '../'

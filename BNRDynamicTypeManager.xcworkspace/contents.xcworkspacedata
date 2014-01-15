@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <Group
+      location = "group:BNRDynamicTypeManager"
+      name = "BNRDynamicTypeManager">
+      <Group
+         location = "group:Core"
+         name = "Core">
+         <FileRef
+            location = "group:BNRDynamicTypeManager.h">
+         </FileRef>
+         <FileRef
+            location = "group:BNRDynamicTypeManager.m">
+         </FileRef>
+      </Group>
+      <Group
+         location = "container:"
+         name = "Controls">
+         <FileRef
+            location = "group:BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedLabel.h">
+         </FileRef>
+         <FileRef
+            location = "group:BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedLabel.m">
+         </FileRef>
+         <FileRef
+            location = "group:BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedTextField.h">
+         </FileRef>
+         <FileRef
+            location = "group:BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedTextField.m">
+         </FileRef>
+         <FileRef
+            location = "group:BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedTextView.h">
+         </FileRef>
+         <FileRef
+            location = "group:BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedTextView.m">
+         </FileRef>
+         <FileRef
+            location = "group:BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedButton.h">
+         </FileRef>
+         <FileRef
+            location = "group:BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedButton.m">
+         </FileRef>
+      </Group>
+   </Group>
+   <FileRef
+      location = "group:Tests/BNRDynamicTypeManager Tests.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Tests/Pods/Pods.xcodeproj">
+   </FileRef>
+</Workspace>
