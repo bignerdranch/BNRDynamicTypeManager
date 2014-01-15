@@ -4,12 +4,11 @@ Pod::Spec.new do |s|
   s.summary      = "Library to help manage iOS 7's Dynamic Type"
 
   s.description  = <<-DESC
-                   TODO: Write this description.
-
-                   * Think: Why did you write this? What is the focus? What does it do?
-                   * CocoaPods will be using this to generate tags, and improve search results.
-                   * Try to keep it short, snappy and to the point.
-                   * Finally, don't worry about the indent, CocoaPods strips it!
+                   BNRDynamicTypeManager is a collection of helper classes that
+                   make it easier to use Dynamic Type in iOS 7 applications.
+                   Most importantly, it handles listening for
+                   `UIContentSizeCategoryDidChangeNotification` and updating
+                   the fonts of all "watched" views automatically.
                    DESC
 
   s.homepage     = "https://github.com/bignerdranch/BNRDynamicTypeManager"
