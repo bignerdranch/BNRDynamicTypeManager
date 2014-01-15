@@ -1,0 +1,371 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		526F36D3188644B8002CC3DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F36D2188644B8002CC3DA /* Foundation.framework */; };
+		526F36D5188644B8002CC3DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F36D4188644B8002CC3DA /* CoreGraphics.framework */; };
+		526F36D7188644B8002CC3DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 526F36D6188644B8002CC3DA /* UIKit.framework */; };
+		526F36DD188644B8002CC3DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 526F36DB188644B8002CC3DA /* InfoPlist.strings */; };
+		526F36DF188644B8002CC3DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F36DE188644B8002CC3DA /* main.m */; };
+		526F36E3188644B8002CC3DA /* BNRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F36E2188644B8002CC3DA /* BNRAppDelegate.m */; };
+		526F36E5188644B8002CC3DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 526F36E4188644B8002CC3DA /* Images.xcassets */; };
+		526F3704188644FE002CC3DA /* BNRDynamicTypeExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F3702188644FE002CC3DA /* BNRDynamicTypeExampleViewController.m */; };
+		526F3705188644FE002CC3DA /* BNRDynamicTypeExampleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526F3703188644FE002CC3DA /* BNRDynamicTypeExampleViewController.xib */; };
+		526F373E18864A91002CC3DA /* BNRDynamicTypeManagedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F3721188649D4002CC3DA /* BNRDynamicTypeManagedLabel.m */; };
+		526F373F18864AA1002CC3DA /* BNRDynamicTypeManagedTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F3723188649D4002CC3DA /* BNRDynamicTypeManagedTextField.m */; };
+		526F374118864AB5002CC3DA /* BNRDynamicTypeManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F371E188649D4002CC3DA /* BNRDynamicTypeManager.m */; };
+		526F374218864AC0002CC3DA /* BNRDynamicTypeManagedTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F3725188649D4002CC3DA /* BNRDynamicTypeManagedTextView.m */; };
+		526F374318864E28002CC3DA /* BNRDynamicTypeManagedButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F3727188649D4002CC3DA /* BNRDynamicTypeManagedButton.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		353A82DD173D45028BAF829D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		526F36CF188644B8002CC3DA /* BNRDynamicTypeManager Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BNRDynamicTypeManager Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		526F36D2188644B8002CC3DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		526F36D4188644B8002CC3DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		526F36D6188644B8002CC3DA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		526F36DA188644B8002CC3DA /* BNRDynamicTypeManager Example-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BNRDynamicTypeManager Example-Info.plist"; sourceTree = "<group>"; };
+		526F36DC188644B8002CC3DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		526F36DE188644B8002CC3DA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		526F36E0188644B8002CC3DA /* BNRDynamicTypeManager Example-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BNRDynamicTypeManager Example-Prefix.pch"; sourceTree = "<group>"; };
+		526F36E1188644B8002CC3DA /* BNRAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BNRAppDelegate.h; sourceTree = "<group>"; };
+		526F36E2188644B8002CC3DA /* BNRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BNRAppDelegate.m; sourceTree = "<group>"; };
+		526F36E4188644B8002CC3DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		526F36EB188644B8002CC3DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		526F3701188644FE002CC3DA /* BNRDynamicTypeExampleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRDynamicTypeExampleViewController.h; sourceTree = "<group>"; };
+		526F3702188644FE002CC3DA /* BNRDynamicTypeExampleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRDynamicTypeExampleViewController.m; sourceTree = "<group>"; };
+		526F3703188644FE002CC3DA /* BNRDynamicTypeExampleViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BNRDynamicTypeExampleViewController.xib; sourceTree = "<group>"; };
+		526F371D188649D4002CC3DA /* BNRDynamicTypeManager.h */ = {isa = PBXFileReference; lastKnownFileType = file; path = BNRDynamicTypeManager.h; sourceTree = "<group>"; };
+		526F371E188649D4002CC3DA /* BNRDynamicTypeManager.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = BNRDynamicTypeManager.m; sourceTree = "<group>"; };
+		526F3720188649D4002CC3DA /* BNRDynamicTypeManagedLabel.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = BNRDynamicTypeManagedLabel.h; path = BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedLabel.h; sourceTree = "<group>"; };
+		526F3721188649D4002CC3DA /* BNRDynamicTypeManagedLabel.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = BNRDynamicTypeManagedLabel.m; path = BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedLabel.m; sourceTree = "<group>"; };
+		526F3722188649D4002CC3DA /* BNRDynamicTypeManagedTextField.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = BNRDynamicTypeManagedTextField.h; path = BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedTextField.h; sourceTree = "<group>"; };
+		526F3723188649D4002CC3DA /* BNRDynamicTypeManagedTextField.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = BNRDynamicTypeManagedTextField.m; path = BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedTextField.m; sourceTree = "<group>"; };
+		526F3724188649D4002CC3DA /* BNRDynamicTypeManagedTextView.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = BNRDynamicTypeManagedTextView.h; path = BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedTextView.h; sourceTree = "<group>"; };
+		526F3725188649D4002CC3DA /* BNRDynamicTypeManagedTextView.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = BNRDynamicTypeManagedTextView.m; path = BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedTextView.m; sourceTree = "<group>"; };
+		526F3726188649D4002CC3DA /* BNRDynamicTypeManagedButton.h */ = {isa = PBXFileReference; lastKnownFileType = file; name = BNRDynamicTypeManagedButton.h; path = BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedButton.h; sourceTree = "<group>"; };
+		526F3727188649D4002CC3DA /* BNRDynamicTypeManagedButton.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; name = BNRDynamicTypeManagedButton.m; path = BNRDynamicTypeManager/Controls/BNRDynamicTypeManagedButton.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		526F36CC188644B8002CC3DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526F36D5188644B8002CC3DA /* CoreGraphics.framework in Frameworks */,
+				526F36D7188644B8002CC3DA /* UIKit.framework in Frameworks */,
+				526F36D3188644B8002CC3DA /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		526F36C6188644B8002CC3DA = {
+			isa = PBXGroup;
+			children = (
+				526F36D8188644B8002CC3DA /* BNRDynamicTypeManager Example */,
+				526F36D1188644B8002CC3DA /* Frameworks */,
+				526F36D0188644B8002CC3DA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		526F36D0188644B8002CC3DA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				526F36CF188644B8002CC3DA /* BNRDynamicTypeManager Example.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		526F36D1188644B8002CC3DA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				526F36D2188644B8002CC3DA /* Foundation.framework */,
+				526F36D4188644B8002CC3DA /* CoreGraphics.framework */,
+				526F36D6188644B8002CC3DA /* UIKit.framework */,
+				526F36EB188644B8002CC3DA /* XCTest.framework */,
+				353A82DD173D45028BAF829D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		526F36D8188644B8002CC3DA /* BNRDynamicTypeManager Example */ = {
+			isa = PBXGroup;
+			children = (
+				526F36E1188644B8002CC3DA /* BNRAppDelegate.h */,
+				526F36E2188644B8002CC3DA /* BNRAppDelegate.m */,
+				526F3701188644FE002CC3DA /* BNRDynamicTypeExampleViewController.h */,
+				526F3702188644FE002CC3DA /* BNRDynamicTypeExampleViewController.m */,
+				526F3703188644FE002CC3DA /* BNRDynamicTypeExampleViewController.xib */,
+				526F36E4188644B8002CC3DA /* Images.xcassets */,
+				526F36D9188644B8002CC3DA /* Supporting Files */,
+			);
+			path = "BNRDynamicTypeManager Example";
+			sourceTree = "<group>";
+		};
+		526F36D9188644B8002CC3DA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				526F3729188649D4002CC3DA /* BNRDynamicTypeManager */,
+				526F36DA188644B8002CC3DA /* BNRDynamicTypeManager Example-Info.plist */,
+				526F36DB188644B8002CC3DA /* InfoPlist.strings */,
+				526F36DE188644B8002CC3DA /* main.m */,
+				526F36E0188644B8002CC3DA /* BNRDynamicTypeManager Example-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		526F371F188649D4002CC3DA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				526F371D188649D4002CC3DA /* BNRDynamicTypeManager.h */,
+				526F371E188649D4002CC3DA /* BNRDynamicTypeManager.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		526F3728188649D4002CC3DA /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				526F3720188649D4002CC3DA /* BNRDynamicTypeManagedLabel.h */,
+				526F3721188649D4002CC3DA /* BNRDynamicTypeManagedLabel.m */,
+				526F3722188649D4002CC3DA /* BNRDynamicTypeManagedTextField.h */,
+				526F3723188649D4002CC3DA /* BNRDynamicTypeManagedTextField.m */,
+				526F3724188649D4002CC3DA /* BNRDynamicTypeManagedTextView.h */,
+				526F3725188649D4002CC3DA /* BNRDynamicTypeManagedTextView.m */,
+				526F3726188649D4002CC3DA /* BNRDynamicTypeManagedButton.h */,
+				526F3727188649D4002CC3DA /* BNRDynamicTypeManagedButton.m */,
+			);
+			name = Controls;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		526F3729188649D4002CC3DA /* BNRDynamicTypeManager */ = {
+			isa = PBXGroup;
+			children = (
+				526F371F188649D4002CC3DA /* Core */,
+				526F3728188649D4002CC3DA /* Controls */,
+			);
+			name = BNRDynamicTypeManager;
+			path = ../../BNRDynamicTypeManager;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		526F36CE188644B8002CC3DA /* BNRDynamicTypeManager Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 526F36FB188644B8002CC3DA /* Build configuration list for PBXNativeTarget "BNRDynamicTypeManager Example" */;
+			buildPhases = (
+				526F36CB188644B8002CC3DA /* Sources */,
+				526F36CC188644B8002CC3DA /* Frameworks */,
+				526F36CD188644B8002CC3DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "BNRDynamicTypeManager Example";
+			productName = "BNRDynamicTypeManager Example";
+			productReference = 526F36CF188644B8002CC3DA /* BNRDynamicTypeManager Example.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		526F36C7188644B8002CC3DA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BNR;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = "Big Nerd Ranch";
+			};
+			buildConfigurationList = 526F36CA188644B8002CC3DA /* Build configuration list for PBXProject "BNRDynamicTypeManager Example" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 526F36C6188644B8002CC3DA;
+			productRefGroup = 526F36D0188644B8002CC3DA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				526F36CE188644B8002CC3DA /* BNRDynamicTypeManager Example */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		526F36CD188644B8002CC3DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526F3705188644FE002CC3DA /* BNRDynamicTypeExampleViewController.xib in Resources */,
+				526F36DD188644B8002CC3DA /* InfoPlist.strings in Resources */,
+				526F36E5188644B8002CC3DA /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		526F36CB188644B8002CC3DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				526F374118864AB5002CC3DA /* BNRDynamicTypeManager.m in Sources */,
+				526F36DF188644B8002CC3DA /* main.m in Sources */,
+				526F374318864E28002CC3DA /* BNRDynamicTypeManagedButton.m in Sources */,
+				526F373E18864A91002CC3DA /* BNRDynamicTypeManagedLabel.m in Sources */,
+				526F36E3188644B8002CC3DA /* BNRAppDelegate.m in Sources */,
+				526F373F18864AA1002CC3DA /* BNRDynamicTypeManagedTextField.m in Sources */,
+				526F3704188644FE002CC3DA /* BNRDynamicTypeExampleViewController.m in Sources */,
+				526F374218864AC0002CC3DA /* BNRDynamicTypeManagedTextView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		526F36DB188644B8002CC3DA /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				526F36DC188644B8002CC3DA /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		526F36F9188644B8002CC3DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		526F36FA188644B8002CC3DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		526F36FC188644B8002CC3DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BNRDynamicTypeManager Example/BNRDynamicTypeManager Example-Prefix.pch";
+				INFOPLIST_FILE = "BNRDynamicTypeManager Example/BNRDynamicTypeManager Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		526F36FD188644B8002CC3DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BNRDynamicTypeManager Example/BNRDynamicTypeManager Example-Prefix.pch";
+				INFOPLIST_FILE = "BNRDynamicTypeManager Example/BNRDynamicTypeManager Example-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		526F36CA188644B8002CC3DA /* Build configuration list for PBXProject "BNRDynamicTypeManager Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526F36F9188644B8002CC3DA /* Debug */,
+				526F36FA188644B8002CC3DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		526F36FB188644B8002CC3DA /* Build configuration list for PBXNativeTarget "BNRDynamicTypeManager Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				526F36FC188644B8002CC3DA /* Debug */,
+				526F36FD188644B8002CC3DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 526F36C7188644B8002CC3DA /* Project object */;
+}

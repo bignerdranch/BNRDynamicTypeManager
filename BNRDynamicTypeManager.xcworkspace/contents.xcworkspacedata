@@ -47,6 +47,9 @@
       location = "group:Tests/BNRDynamicTypeManager Tests.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:Example/BNRDynamicTypeManager Example.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Tests/Pods/Pods.xcodeproj">
    </FileRef>
 </Workspace>
