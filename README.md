@@ -23,11 +23,13 @@ The simplest use case is if your are using XIB files or storyboards. After pulli
 If you are creating views programmatically, use the same class mapping from Using XIB Files above, and use the designated initializer from their header files. The initializers have the same arguments as the UIKit parents with an additional `textStyle:` argument. For example, creating a managed UILabel and UITextView:
 
 ```objective-c
-UILabel *label = [[BNRDynamicTypeManagedLabel alloc] initWithFrame:CGRectZero
-                                                         textStyle:UIFontTextStyleBody];
-UITextView *textView = [[BNRDynamicTypeManagedTextView alloc] initWithFrame:CGRectZero
-                                                              textContainer:nil
-                                                                  textStyle:UIFontTextStyleFootnote];
+UILabel *label = [[BNRDynamicTypeManagedLabel alloc]
+                       initWithFrame:CGRectZero
+                           textStyle:UIFontTextStyleBody];
+UITextView *textView = [[BNRDynamicTypeManagedTextView alloc]
+                             initWithFrame:CGRectZero
+                             textContainer:nil
+                                 textStyle:UIFontTextStyleFootnote];
 ```
 
 ## Usage - Without UIKit Subclasses
@@ -37,7 +39,8 @@ If you want more explicit control (e.g., if you already have a UIKit subclass th
 ```objective-c
 UILabel *label = /* create a label */;
 
-// Tell BNRDynamicTypeManager to update label.font now and any time the user changes their font size.
+// Tell BNRDynamicTypeManager to update label.font now and any time the user
+// changes their font size.
 [[BNRDynamicTypeManager sharedInstance] watchElement:label
                                            textStyle:UIFontTextStyleBody];
 ```
