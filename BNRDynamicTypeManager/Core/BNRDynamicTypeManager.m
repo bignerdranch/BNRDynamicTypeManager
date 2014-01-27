@@ -8,33 +8,25 @@
 
 #import "BNRDynamicTypeManager.h"
 
-@interface KeypathTextStyle : NSObject
+static NSString * const BNRDynamicTypeManagerFontKeypathUILabel     = @"font";
+static NSString * const BNRDynamicTypeManagerFontKeypathUIButton    = @"titleLabel.font";
+static NSString * const BNRDynamicTypeManagerFontKeypathUITextField = @"font";
+static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
+
+// Helper class that we'll use as valuse in our NSMapTable to hold
+// (keypath, textStyle) tuples.
+@interface BNRDynamicTypeTuple : NSObject
 
 @property (nonatomic, copy) NSString *keypath;
-@property (nonatomic, copy) NSString *style;
+@property (nonatomic, copy) NSString *textStyle;
 
-- (instancetype)initWithKeypath:(NSString *)keypath textStyle:(NSString *)style;
-
-@end
-
-@implementation KeypathTextStyle
-
-- (instancetype)initWithKeypath:(NSString *)keypath textStyle:(NSString *)style
-{
-    self = [super init];
-    if (self) {
-        self.keypath = keypath;
-        self.style = style;
-    }
-    return self;
-}
+- (instancetype)initWithKeypath:(NSString *)keypath textStyle:(NSString *)textStyle;
 
 @end
 
 @interface BNRDynamicTypeManager ()
 
-@property (nonatomic, strong) NSMapTable *fontTable;
-@property (nonatomic, strong) NSMapTable *customKeypathTable;
+@property (nonatomic, strong) NSMapTable *elementToTupleTable;
 
 @end
 
@@ -76,12 +68,7 @@
 {
     self = [super init];
     if (self) {
-        _fontTable = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsWeakMemory
-                                               valueOptions:NSPointerFunctionsCopyIn
-                                                   capacity:0];
-        _customKeypathTable = [[NSMapTable alloc] initWithKeyOptions:NSPointerFunctionsWeakMemory
-                                                        valueOptions:NSPointerFunctionsStrongMemory
-                                                            capacity:0];
+        _elementToTupleTable = [NSMapTable weakToStrongObjectsMapTable];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(noteUIContentSizeCategoryDidChange:)
                                                      name:UIContentSizeCategoryDidChangeNotification
@@ -97,27 +84,57 @@
 
 - (void)noteUIContentSizeCategoryDidChange:(NSNotification *)note
 {
-    for (id element in self.fontTable) {
-        NSString *style = [self.fontTable objectForKey:element];
-        [element setFont:[UIFont preferredFontForTextStyle:style]];
-    }
-    for (id element in self.customKeypathTable) {
-        KeypathTextStyle *tuple = [self.customKeypathTable objectForKey:element];
-        [element setValue:[UIFont preferredFontForTextStyle:tuple.style] forKeyPath:tuple.keypath];
+    NSMapTable *elementToTupleTable = self.elementToTupleTable;
+
+    for (id element in elementToTupleTable) {
+        BNRDynamicTypeTuple *tuple = [elementToTupleTable objectForKey:element];
+        [element setValue:[UIFont preferredFontForTextStyle:tuple.textStyle] forKeyPath:tuple.keypath];
     }
 }
 
-- (void)watchElement:(id)elementWithFont textStyle:(NSString *)style
+- (void)watchLabel:(UILabel *)label textStyle:(NSString *)style
 {
-    [elementWithFont setFont:[UIFont preferredFontForTextStyle:style]];
-    [self.fontTable setObject:style forKey:elementWithFont];
+    [self watchElement:label fontKeypath:BNRDynamicTypeManagerFontKeypathUILabel textStyle:style];
+}
+
+- (void)watchButton:(UIButton *)button textStyle:(NSString *)style
+{
+    [self watchElement:button fontKeypath:BNRDynamicTypeManagerFontKeypathUIButton textStyle:style];
+}
+
+- (void)watchTextField:(UITextField *)textField textStyle:(NSString *)style
+{
+    [self watchElement:textField fontKeypath:BNRDynamicTypeManagerFontKeypathUITextField textStyle:style];
+}
+
+- (void)watchTextView:(UITextView *)textView textStyle:(NSString *)style
+{
+    [self watchElement:textView fontKeypath:BNRDynamicTypeManagerFontKeypathUITextView textStyle:style];
 }
 
 - (void)watchElement:(id)element fontKeypath:(NSString *)fontKeypath textStyle:(NSString *)style
 {
-    [element setValue:[UIFont preferredFontForTextStyle:style] forKeyPath:fontKeypath];
-    KeypathTextStyle *tuple = [[KeypathTextStyle alloc] initWithKeypath:fontKeypath textStyle:style];
-    [self.customKeypathTable setObject:tuple forKey:element];
+    if (fontKeypath && style) {
+        [element setValue:[UIFont preferredFontForTextStyle:style] forKeyPath:fontKeypath];
+
+        BNRDynamicTypeTuple *tuple = [[BNRDynamicTypeTuple alloc] initWithKeypath:fontKeypath textStyle:style];
+        [self.elementToTupleTable setObject:tuple
+                                     forKey:element];
+    }
+}
+
+@end
+
+@implementation BNRDynamicTypeTuple
+
+- (instancetype)initWithKeypath:(NSString *)keypath textStyle:(NSString *)textStyle
+{
+    self = [super init];
+    if (self) {
+        self.keypath = keypath;
+        self.textStyle = textStyle;
+    }
+    return self;
 }
 
 @end

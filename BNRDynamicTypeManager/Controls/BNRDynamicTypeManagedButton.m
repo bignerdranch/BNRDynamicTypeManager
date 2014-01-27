@@ -23,7 +23,7 @@ static NSString *const BNRDynamicTypeManagedButtonFontKeypath = @"titleLabel.fon
     self = [super initWithFrame:frame];
 
     if (self) {
-        [[BNRDynamicTypeManager sharedInstance] watchElement:self fontKeypath:BNRDynamicTypeManagedButtonFontKeypath textStyle:textStyle];
+        [[BNRDynamicTypeManager sharedInstance] watchButton:self textStyle:textStyle];
     }
 
     return self;
@@ -35,9 +35,7 @@ static NSString *const BNRDynamicTypeManagedButtonFontKeypath = @"titleLabel.fon
 
     if (self) {
         NSString *textStyle = [BNRDynamicTypeManager textStyleMatchingFont:self.titleLabel.font];
-        if (textStyle) {
-            [[BNRDynamicTypeManager sharedInstance] watchElement:self fontKeypath:BNRDynamicTypeManagedButtonFontKeypath textStyle:textStyle];
-        }
+        [[BNRDynamicTypeManager sharedInstance] watchButton:self textStyle:textStyle];
     }
 
     return self;

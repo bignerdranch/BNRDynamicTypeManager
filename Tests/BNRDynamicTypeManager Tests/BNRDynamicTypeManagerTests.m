@@ -35,7 +35,7 @@
     self.manager = [[BNRDynamicTypeManager alloc] init];
     self.element = [[TestElement alloc] init];
 
-    [self.manager watchElement:self.element textStyle:UIFontTextStyleBody];
+    [self.manager watchElement:self.element fontKeypath:@"font" textStyle:UIFontTextStyleBody];
 }
 
 - (void)tearDown

@@ -21,7 +21,7 @@
     self = [super initWithFrame:frame];
 
     if (self) {
-        [[BNRDynamicTypeManager sharedInstance] watchElement:self textStyle:textStyle];
+        [[BNRDynamicTypeManager sharedInstance] watchTextField:self textStyle:textStyle];
     }
 
     return self;
@@ -33,9 +33,7 @@
 
     if (self) {
         NSString *textStyle = [BNRDynamicTypeManager textStyleMatchingFont:self.font];
-        if (textStyle) {
-            [[BNRDynamicTypeManager sharedInstance] watchElement:self textStyle:textStyle];
-        }
+        [[BNRDynamicTypeManager sharedInstance] watchTextField:self textStyle:textStyle];
     }
 
     return self;
