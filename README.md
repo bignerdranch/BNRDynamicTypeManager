@@ -34,18 +34,18 @@ UITextView *textView = [[BNRDynamicTypeManagedTextView alloc]
 
 ## Usage - Without UIKit Subclasses
 
-If you want more explicit control (e.g., if you already have a UIKit subclass that you're using, but you'd still like to have the font managed for you), use `BNRDynamicTypeManager` directly by telling it what objects to watch. If the object has a `font` property (e.g., a UILabel):
+If you want more explicit control (e.g., if you already have a UIKit subclass that you're using, but you'd still like to have the font managed for you), use `BNRDynamicTypeManager` directly by telling it what objects to watch. If the object is one of the known UIKit classes or a subclass of them, use the provided methods. E.g., for `UILabel`:
 
 ```objective-c
 UILabel *label = /* create a label */;
 
 // Tell BNRDynamicTypeManager to update label.font now and any time the user
 // changes their font size.
-[[BNRDynamicTypeManager sharedInstance] watchElement:label
-                                           textStyle:UIFontTextStyleBody];
+[[BNRDynamicTypeManager sharedInstance] watchLabel:label
+                                         textStyle:UIFontTextStyleBody];
 ```
 
-If the object does not have a `font` property directly, but has a `font` that can be reached via a keypath, use `watchElement:fontKeypath:textStyle:` instead. E.g., for UIButton:
+If you want to watch an object that isn't one of the known `UIKit` classes, but has a `UIFont *font` that can be reached via a keypath, use `watchElement:fontKeypath:textStyle:` instead. E.g., if there wasn't a method provided for `UIButton`:
 
 ```objective-c
 UIButton *button = /* create a button */;
