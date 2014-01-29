@@ -84,4 +84,18 @@
     expect(weakElement).to.beNil();
 }
 
+- (void)testGetStyleFromElementIfGivenNilStyle
+{
+    TestElement *element = [[TestElement alloc] init];
+    UIFont *headlineFont = [UIFont preferredFontForTextStyle:UIFontTextStyleHeadline];
+    element.font = headlineFont;
+
+    [self.manager watchElement:element fontKeypath:@"font" textStyle:nil];
+
+    element.font = nil;
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:UIContentSizeCategoryDidChangeNotification object:nil];
+    expect(element.font).to.equal(headlineFont);
+}
+
 @end

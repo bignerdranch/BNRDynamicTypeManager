@@ -114,6 +114,9 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
 
 - (void)watchElement:(id)element fontKeypath:(NSString *)fontKeypath textStyle:(NSString *)style
 {
+    if (!style) {
+        style = [BNRDynamicTypeManager textStyleMatchingFont:[element valueForKeyPath:fontKeypath]];
+    }
     if (fontKeypath && style) {
         [element setValue:[UIFont preferredFontForTextStyle:style] forKeyPath:fontKeypath];
 
