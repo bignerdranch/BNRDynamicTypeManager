@@ -13,6 +13,8 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUIButton    = @"titleLab
 static NSString * const BNRDynamicTypeManagerFontKeypathUITextField = @"font";
 static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
 
+#pragma mark - BNRDynamicTypeTuple interface
+
 // Helper class that we'll use as values in our NSMapTable to hold
 // (keypath, textStyle) tuples.
 @interface BNRDynamicTypeTuple : NSObject
@@ -24,6 +26,8 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
 
 @end
 
+#pragma mark - BNRDynamicTypeManager class extension
+
 @interface BNRDynamicTypeManager ()
 
 @property (nonatomic, strong) NSMapTable *elementToTupleTable;
@@ -31,6 +35,8 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
 @end
 
 @implementation BNRDynamicTypeManager
+
+#pragma mark - Singleton
 
 + (instancetype)sharedInstance
 {
@@ -41,6 +47,8 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
     });
     return sharedInstance;
 }
+
+#pragma mark - Class Methods
 
 + (NSString *)textStyleMatchingFont:(UIFont *)font
 {
@@ -64,6 +72,8 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
     return nil;
 }
 
+#pragma mark - Lifecycle
+
 - (instancetype)init
 {
     self = [super init];
@@ -82,15 +92,7 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)noteContentSizeCategoryDidChange:(NSNotification *)note // UIContentSizeCategoryDidChangeNotification
-{
-    NSMapTable *elementToTupleTable = self.elementToTupleTable;
-
-    for (id element in elementToTupleTable) {
-        BNRDynamicTypeTuple *tuple = [elementToTupleTable objectForKey:element];
-        [element setValue:[UIFont preferredFontForTextStyle:tuple.textStyle] forKeyPath:tuple.keypath];
-    }
-}
+#pragma mark - Public API
 
 - (void)watchLabel:(UILabel *)label textStyle:(NSString *)style
 {
@@ -126,7 +128,21 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
     }
 }
 
+#pragma mark - Notifications
+
+- (void)noteContentSizeCategoryDidChange:(NSNotification *)note // UIContentSizeCategoryDidChangeNotification
+{
+    NSMapTable *elementToTupleTable = self.elementToTupleTable;
+
+    for (id element in elementToTupleTable) {
+        BNRDynamicTypeTuple *tuple = [elementToTupleTable objectForKey:element];
+        [element setValue:[UIFont preferredFontForTextStyle:tuple.textStyle] forKeyPath:tuple.keypath];
+    }
+}
+
 @end
+
+#pragma mark - BNRDynamicTypeTuple implementation
 
 @implementation BNRDynamicTypeTuple
 
