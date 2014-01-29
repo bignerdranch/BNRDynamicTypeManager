@@ -13,7 +13,7 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUIButton    = @"titleLab
 static NSString * const BNRDynamicTypeManagerFontKeypathUITextField = @"font";
 static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
 
-// Helper class that we'll use as valuse in our NSMapTable to hold
+// Helper class that we'll use as values in our NSMapTable to hold
 // (keypath, textStyle) tuples.
 @interface BNRDynamicTypeTuple : NSObject
 
