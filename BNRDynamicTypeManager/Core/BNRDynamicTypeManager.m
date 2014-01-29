@@ -70,7 +70,7 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
     if (self) {
         _elementToTupleTable = [NSMapTable weakToStrongObjectsMapTable];
         [[NSNotificationCenter defaultCenter] addObserver:self
-                                                 selector:@selector(noteUIContentSizeCategoryDidChange:)
+                                                 selector:@selector(noteContentSizeCategoryDidChange:)
                                                      name:UIContentSizeCategoryDidChangeNotification
                                                    object:nil];
     }
@@ -82,7 +82,7 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)noteUIContentSizeCategoryDidChange:(NSNotification *)note
+- (void)noteContentSizeCategoryDidChange:(NSNotification *)note // UIContentSizeCategoryDidChangeNotification
 {
     NSMapTable *elementToTupleTable = self.elementToTupleTable;
 
