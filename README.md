@@ -5,7 +5,7 @@
 
 BNRDynamicTypeManager is a collection of helper classes that make it easier to use Dynamic Type in iOS 7 applications. Most importantly, it handles listening for  `UIContentSizeCategoryDidChangeNotification` and updating the fonts of all "watched" views automatically.
 
-To run the example project, clone the repo, make sure the Example target is select, and run it.
+To run the example project, clone the repo, make sure the Example target is selected, and run it.
 
 To run the unit tests, run `pod install` from the Tests directory first.
 
