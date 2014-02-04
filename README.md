@@ -23,9 +23,20 @@ The simplest use case is if your are using XIB files or storyboards. After pulli
 If you are creating views programmatically, use the same class mapping from Using XIB Files above, and use the designated initializer from their header files. The initializers have the same arguments as the UIKit parents with an additional `textStyle:` argument. For example, creating a managed UILabel and UITextView:
 
 ```objective-c
+#include <BNRDynamicTypeManager/BNRDynamicTypeManagedLabel.h>
+#include <BNRDynamicTypeManager/BNRDynamicTypeManagedButton.h>
+#include <BNRDynamicTypeManager/BNRDynamicTypeManagedTextField.h>
+#include <BNRDynamicTypeManager/BNRDynamicTypeManagedTextView.h>
+
 UILabel *label = [[BNRDynamicTypeManagedLabel alloc]
                        initWithFrame:CGRectZero
                            textStyle:UIFontTextStyleBody];
+UIButton *button = [[BNRDynamicTypeManagedButton alloc]
+                         initWithFrame:CGRectZero
+                             textStyle:UIFontTextStyleBody];
+UITextField *textField = [[BNRDynamicTypeManagedTextField alloc]
+                               initWithFrame:CGRectZero
+                                   textStyle:UIFontTextStyleFootnote];
 UITextView *textView = [[BNRDynamicTypeManagedTextView alloc]
                              initWithFrame:CGRectZero
                              textContainer:nil
@@ -37,6 +48,8 @@ UITextView *textView = [[BNRDynamicTypeManagedTextView alloc]
 If you want more explicit control (e.g., if you already have a UIKit subclass that you're using, but you'd still like to have the font managed for you), use `BNRDynamicTypeManager` directly by telling it what objects to watch. If the object is one of the known UIKit classes or a subclass of them, use the provided methods. E.g., for `UILabel`:
 
 ```objective-c
+#include <BNRDynamicTypeManager/BNRDynamicTypeManager.h>
+
 UILabel *label = /* create a label */;
 
 // Tell BNRDynamicTypeManager to update label.font now and any time the user
@@ -48,6 +61,8 @@ UILabel *label = /* create a label */;
 If you want to watch an object that isn't one of the known `UIKit` classes, but has a `UIFont *font` that can be reached via a keypath, use `watchElement:fontKeypath:textStyle:` instead. E.g., if there wasn't a method provided for `UIButton`:
 
 ```objective-c
+#include <BNRDynamicTypeManager/BNRDynamicTypeManager.h>
+
 UIButton *button = /* create a button */;
 
 [[BNRDynamicTypeManager sharedInstance] watchElement:button
@@ -64,7 +79,7 @@ iOS 7 and ARC.
 BNRDynamicTypeManager is available through [CocoaPods](http://cocoapods.org), to install
 it simply add the following line to your Podfile:
 
-    pod "BNRDynamicTypeManager"
+    pod "BNRDynamicTypeManager", "~> 0.1.0"
 
 ## Installation without Cocoapods
 
