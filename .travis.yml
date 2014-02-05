@@ -1,0 +1,9 @@
+language: objective-c
+rvm: 1.9.3
+before_install:
+    - brew update
+    - brew uninstall xctool && brew install xctool --HEAD
+    - cd Tests && pod install && cd $TRAVIS_BUILD_DIR
+script:
+    - xctool -workspace BNRDynamicTypeManager.xcworkspace -scheme 'BNRDynamicTypeManager Example' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+    - xctool test -workspace BNRDynamicTypeManager.xcworkspace -scheme 'BNRDynamicTypeManager Tests' -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
