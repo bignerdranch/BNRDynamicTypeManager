@@ -98,4 +98,26 @@
     expect(element.font).to.equal(headlineFont);
 }
 
+- (void)testSetCustomFontStyle {
+    UIFont *font = [UIFont fontWithName:@"Helvetica" size:13.0];
+    UILabel *label = [[UILabel alloc] init];
+    label.font = font;
+
+    UIFont *fancyFont = [UIFont fontWithName:@"MarkerFelt-Thin" size:20];
+
+    BNRDynamicTypeManager *manager = [[BNRDynamicTypeManager alloc] init];
+    [manager setFontAction:^UIFont *(NSString *style) {
+        if ([style isEqualToString:@"fancyStyle"]) {
+            return fancyFont;
+        }
+        return font;
+    }];
+
+    [manager watchLabel:label textStyle:@"fancyStyle"];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:UIContentSizeCategoryDidChangeNotification object:nil];
+    expect(label.font).to.equal(fancyFont);
+
+}
+
 @end
