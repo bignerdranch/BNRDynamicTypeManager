@@ -31,6 +31,7 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
 @interface BNRDynamicTypeManager ()
 
 @property (nonatomic, strong) NSMapTable *elementToTupleTable;
+@property (nonatomic, copy) UIFont *(^fontAction)(NSString *);
 
 @end
 
@@ -79,6 +80,9 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
     self = [super init];
     if (self) {
         _elementToTupleTable = [NSMapTable weakToStrongObjectsMapTable];
+        _fontAction = ^UIFont *(NSString *fontStyle) {
+            return [UIFont preferredFontForTextStyle:fontStyle];
+        };
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(noteContentSizeCategoryDidChange:)
                                                      name:UIContentSizeCategoryDidChangeNotification
@@ -93,6 +97,10 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
 }
 
 #pragma mark - Public API
+
+- (void)setFontAction:(UIFont *(^)(NSString *))action {
+    _fontAction = action;
+}
 
 - (void)watchLabel:(UILabel *)label textStyle:(NSString *)style
 {
@@ -120,7 +128,8 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
         style = [BNRDynamicTypeManager textStyleMatchingFont:[element valueForKeyPath:fontKeypath]];
     }
     if (fontKeypath && style) {
-        [element setValue:[UIFont preferredFontForTextStyle:style] forKeyPath:fontKeypath];
+        UIFont *preferredFont = self.fontAction(style);
+        [element setValue:preferredFont forKeyPath:fontKeypath];
 
         BNRDynamicTypeTuple *tuple = [[BNRDynamicTypeTuple alloc] initWithKeypath:fontKeypath textStyle:style];
         [self.elementToTupleTable setObject:tuple
@@ -136,7 +145,8 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
 
     for (id element in elementToTupleTable) {
         BNRDynamicTypeTuple *tuple = [elementToTupleTable objectForKey:element];
-        [element setValue:[UIFont preferredFontForTextStyle:tuple.textStyle] forKeyPath:tuple.keypath];
+        UIFont *preferredFont = self.fontAction(tuple.textStyle);
+        [element setValue:preferredFont forKeyPath:tuple.keypath];
     }
 }
 

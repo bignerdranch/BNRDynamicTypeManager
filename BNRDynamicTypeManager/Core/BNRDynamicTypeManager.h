@@ -34,12 +34,26 @@
    case where this can fail is if you save off a `UIFont`, then
    adjust the system-wide dynamic type size, then pass the saved
    (but now "stale") font to this method.
+ @warning This will not work if you set a custom font action. see 
+   -setFontAction:
 
  @param font The font to check against built-in text styles
 
  @return The matched text style, or `nil` if none was found.
  */
 + (NSString *)textStyleMatchingFont:(UIFont *)font;
+
+///---------------------------
+/// @name Customize font style
+///---------------------------
+
+/**
+ Added to support custom styles outside of the apple-provided ones.
+ By default there is a font action which calls through to UIFont preferredFontForTextStyle:
+
+ @param action The block to call, takes a string which represents the font style (E.G. UIFontTextStyleBody)
+ */
+- (void)setFontAction:(UIFont * (^)(NSString *))action;
 
 ///------------------------
 /// @name Watching Elements
