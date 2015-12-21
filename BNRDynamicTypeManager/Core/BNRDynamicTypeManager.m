@@ -60,7 +60,11 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
                        UIFontTextStyleCaption2,
                        UIFontTextStyleFootnote,
                        UIFontTextStyleHeadline,
-                       UIFontTextStyleSubheadline];
+                       UIFontTextStyleSubheadline,
+                       UIFontTextStyleCallout,
+                       UIFontTextStyleTitle1,
+                       UIFontTextStyleTitle2,
+                       UIFontTextStyleTitle3];
     });
 
     for (NSString *style in textStyles) {

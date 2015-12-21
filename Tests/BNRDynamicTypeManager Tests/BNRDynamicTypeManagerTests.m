@@ -53,7 +53,11 @@
                               UIFontTextStyleCaption2,
                               UIFontTextStyleFootnote,
                               UIFontTextStyleHeadline,
-                              UIFontTextStyleSubheadline]) {
+                              UIFontTextStyleSubheadline,
+                              UIFontTextStyleCallout,
+                              UIFontTextStyleTitle1,
+                              UIFontTextStyleTitle2,
+                              UIFontTextStyleTitle3]) {
         UIFont *font = [UIFont preferredFontForTextStyle:style];
         expect([BNRDynamicTypeManager textStyleMatchingFont:font]).to.equal(style);
     }
