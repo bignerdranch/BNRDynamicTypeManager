@@ -60,7 +60,14 @@ static NSString * const BNRDynamicTypeManagerFontKeypathUITextView  = @"font";
                        UIFontTextStyleCaption2,
                        UIFontTextStyleFootnote,
                        UIFontTextStyleHeadline,
-                       UIFontTextStyleSubheadline];
+                       UIFontTextStyleSubheadline,
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 90000
+                       UIFontTextStyleCallout,
+                       UIFontTextStyleTitle1,
+                       UIFontTextStyleTitle2,
+                       UIFontTextStyleTitle3
+#endif
+                       ];
     });
 
     for (NSString *style in textStyles) {
