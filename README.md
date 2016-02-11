@@ -75,14 +75,14 @@ UIButton *button = /* create a button */;
 
 iOS 7 and ARC.
 
-## Installation with Cocoapods
+## Installation with CocoaPods
 
 BNRDynamicTypeManager is available through [CocoaPods](http://cocoapods.org), to install
 it simply add the following line to your Podfile:
 
     pod "BNRDynamicTypeManager", "~> 0.1.0"
 
-## Installation without Cocoapods
+## Installation without CocoaPods
 
 Grab the class files (header and implementation) from the `BNRDynamicTypeManager/Core` and `BNRDynamicTypeManager/Controls` directory and copy them into your project.
 ## Author
